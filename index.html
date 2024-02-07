@@ -10,7 +10,7 @@
 </head>
 <body style="background-image: url(valorant.png); " class="relative bg-cover bg-opacity-50">
     <h1 class="font-bold text-5xl p-7 text-center text-red-900 border-b-2 border-gray-800 bg-black bg-opacity-40 font-serif ">VALORANT CHARACTERS</h1>
-        <div class="div1 flex overflow-x-auto py-5 " id="container">
+        <div class="div1 flex gap-x-10 overflow-x-auto py-5 mx-10 " id="container">
         </div>   
     </div>
 <script>
@@ -23,7 +23,7 @@
             var abt=`<div class="w-full grid grid-cols-2 space-x-2 space-y-2">
             <div class="rounded flex flex-row bg-black p-2">
                 <img class="w-8" src="${agents.abilities.displayIcon}">
-                <p class="px-3">${agents.displayName}</p>
+                <p class="px-3 ">${agents.displayName}</p>
             </div>`
 
             var abilities="";
@@ -31,24 +31,22 @@
                     abilities+=`
                 <div class=" w-3/4 flex flex-col justify-center items-center text-center p-1 bg-transparent border-2 border-red-900 mx-5 my-2 rounded-lg transform hover:scale-110">
                     <img class="w-5 " src="${a.displayIcon}">
-                    <p class="text-white px-1">${a.displayName}</p>
+                    <p class="text-white  px-1">${a.displayName}</p>
                 </div>`;
                 });
 
             var t=
             ` 
-            <div class="w-full h-full rounded-lg text-white p-2 mx-3 my-8 border-2 border-gray-800  bg-black bg-opacity-60" style="width: 400px">                
+            <div class="w-full h-full rounded-lg text-white p-2 my-8 border-2 border-gray-800  bg-black bg-opacity-60" style="width: 400px "">                
                 <img class="w-full shadow-xl " src="${agents.displayIcon}">
                 <div class="flex flex-col w-full h-full p-3 ">
                     <h1 class="font-bold text-2xl w-full pb-1 text-white uppercase text-center"> ${agents.displayName}</h1>
-                    <p class="w-64 text-gray-300"> ${agents.description}</p>
+                    <p class="w-64 text-gray-300 text-ellipsis line-cramp-3"> ${agents.description}</p>
                 </div>
                 <div class="w-full h-full grid grid-cols-2 mx-1 mt-2">
                     ${abilities}
                 </div>
-                <audio controls class=" w-full p-2 text-center ">
-                    <source src="${agents.voiceLine.mediaList[0].wave}" type="audio/wav" class="text-center">
-                </audio>
+                
             </div>
             `
                     if (agents.isPlayableCharacter == true) {
